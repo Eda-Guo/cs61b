@@ -1,5 +1,5 @@
 public class NBody {
-    public static String imageBackground = "images/starfield.jpg";
+    private static String imageBackground = "images/starfield.jpg";
     /**
      * Get radius
      * @param file input file
