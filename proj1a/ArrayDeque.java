@@ -1,11 +1,11 @@
-public class AarrayDeque<T> {
+public class ArrayDeque<T> {
     private static int initialCapacity = 8;
     private static int factor = 2;
     private T[] items;
     private int capacity;
     private int size;
     private double ratio;
-    public AarrayDeque(){
+    public ArrayDeque(){
         items = (T[])new Object[initialCapacity];
         size = 0;
         capacity = initialCapacity;
