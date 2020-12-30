@@ -14,7 +14,7 @@ public class ArrayDeque<T> {
     }
 
     private void resize(int newCap) {
-        if (newCap <= initialCapacity){
+        if (newCap <= initialCapacity) {
             return;
         }
         T[] nItems = (T[]) new Object[newCap];
