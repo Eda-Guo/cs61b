@@ -5,6 +5,7 @@ public class ArrayDeque<T> {
     private int capacity;
     private int size;
     private double ratio;
+
     public ArrayDeque() {
         items = (T[]) new Object[initialCapacity];
         size = 0;
@@ -13,6 +14,9 @@ public class ArrayDeque<T> {
     }
 
     private void resize(int newCap) {
+        if (newCap <= initialCapacity){
+            return;
+        }
         T[] nItems = (T[]) new Object[newCap];
         System.arraycopy(items, 0, nItems, 0, size);
         this.capacity = newCap;
@@ -67,7 +71,7 @@ public class ArrayDeque<T> {
         if (isEmpty()) {
             return null;
         }
-        T res = items[size];
+        T res = items[size - 1];
         items[size - 1]  = null;
         size--;
         checkRatio();
@@ -82,17 +86,19 @@ public class ArrayDeque<T> {
     }
 
 //    public  static void main(String[] args){
-//        AarrayDeque<Integer> ad = new AarrayDeque<>();
+//        ArrayDeque<Integer> ad = new ArrayDeque<>();
+//        ad.addFirst(0);
 //        ad.addFirst(1);
-//        ad.addFirst(2);
-//        ad.addFirst(3);
+//        System.out.println(ad.removeLast());
+//        System.out.println(ad.removeFirst());
 //        ad.addFirst(4);
-//        ad.addFirst(5);
-//        ad.addFirst(6);
+//        System.out.println(ad.removeFirst());
+//        ad.isEmpty();
 //        ad.addFirst(7);
-//        ad.addLast(8);
-//        ad.addLast(9);
-//        ad.removeFirst();
+//        System.out.println(ad.removeFirst());
+//        ad.addFirst(9);
+//        //ad.addLast(9);
+//        System.out.println(ad.removeFirst());
 //        ad.removeLast();
 //        System.out.println(ad.get(3));
 //        ad.printDeque();
