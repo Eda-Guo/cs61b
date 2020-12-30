@@ -5,7 +5,7 @@ public class ArrayDeque<T> {
     private int capacity;
     private int size;
     private double ratio;
-    ArrayDeque() {
+    public ArrayDeque() {
         items = (T[]) new Object[initialCapacity];
         size = 0;
         capacity = initialCapacity;
