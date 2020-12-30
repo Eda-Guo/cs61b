@@ -5,27 +5,27 @@ public class ArrayDeque<T> {
     private int capacity;
     private int size;
     private double ratio;
-    public ArrayDeque(){
-        items = (T[])new Object[initialCapacity];
+    ArrayDeque() {
+        items = (T[]) new Object[initialCapacity];
         size = 0;
         capacity = initialCapacity;
         ratio = 0.25;
     }
 
-    private void resize(int capacity){
-        T[] nItems = (T[]) new Object[capacity];
+    private void resize(int newCap) {
+        T[] nItems = (T[]) new Object[newCap];
         System.arraycopy(items, 0, nItems, 0, size);
-        this.capacity = capacity;
+        this.capacity = newCap;
         items = nItems;
     }
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return size == 0;
     }
-    public int size(){
+    public int size() {
         return size;
     }
-    public void addFirst(T item){
-        if (size == items.length){
+    public void addFirst(T item) {
+        if (size == items.length) {
             resize(size * factor);
         }
         System.arraycopy(items, 0, items, 1, size);
@@ -34,26 +34,26 @@ public class ArrayDeque<T> {
 
     }
 
-    public void addLast(T item){
-        if (size == items.length){
+    public void addLast(T item) {
+        if (size == items.length) {
             resize(size * 2);
         }
         items[size] = item;
         size++;
     }
-    public void printDeque(){
-        for (int i = 0; i < size; i++){
+    public void printDeque() {
+        for (int i = 0; i < size; i++) {
             System.out.print(items[i] + " ");
         }
         System.out.println();
     }
-    private void checkRatio(){
-        if ((double)size / capacity < ratio){
+    private void checkRatio() {
+        if ((double) size / capacity < ratio) {
             resize(capacity / factor);
         }
     }
-    public T removeFirst(){
-        if (isEmpty()){
+    public T removeFirst() {
+        if (isEmpty()) {
             return null;
         }
         T res = items[0];
@@ -63,8 +63,8 @@ public class ArrayDeque<T> {
         checkRatio();
         return res;
     }
-    public T removeLast(){
-        if (isEmpty()){
+    public T removeLast() {
+        if (isEmpty()) {
             return null;
         }
         T res = items[size];
@@ -74,8 +74,8 @@ public class ArrayDeque<T> {
         return res;
     }
 
-    public T get(int index){
-        if (index >= size){
+    public T get(int index) {
+        if (index >= size) {
             return null;
         }
         return items[index];
