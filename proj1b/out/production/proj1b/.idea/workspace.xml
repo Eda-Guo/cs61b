@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="75531175-86c6-4264-b55f-b1d111ae64c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Deque.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LinkedListDeque.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OffByN.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OffByOne.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Palindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/Intlist/IntListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/Intlist/IntListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1a/out/production/proj1a/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/out/production/proj1a/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1a/out/production/proj1a/AarrayDeque.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1a/out/production/proj1a/LinkedListDeque$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/out/production/proj1a/LinkedListDeque$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1a/out/production/proj1a/LinkedListDeque.class" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/out/production/proj1a/LinkedListDeque.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1a/out/production/proj1a/LinkedListDequeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/TestPalindrome.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1mOu0l3Vwlsmn68Uboq7ZaICQwQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../library-sp18/javalib" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="TestPalindrome.testWordToDeque" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1b" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestPalindrome" />
+      <option name="METHOD_NAME" value="testWordToDeque" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestPalindrome.testWordToDeque" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="75531175-86c6-4264-b55f-b1d111ae64c3" name="Default Changelist" comment="" />
+      <created>1609376737918</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609376737918</updated>
+    </task>
+    <servers />
+  </component>
+</project>
