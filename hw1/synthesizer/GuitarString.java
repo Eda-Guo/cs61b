@@ -1,5 +1,7 @@
-// TODO: Make sure to make this class a part of the synthesizer package
+package synthesizer;// TODO: Make sure to make this class a part of the synthesizer package
 //package <package name>;
+import synthesizer.AbstractBoundedQueue;
+import synthesizer.BoundedQueue;
 
 //Make sure this class is public
 public class GuitarString {
