@@ -8,7 +8,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     private int last;
     /* Array for storing the buffer data. */
     private T[] rb;
-    public class BufferIterator implements Iterator<T> {
+    private class BufferIterator implements Iterator<T> {
         int index = first;
 
         @Override
