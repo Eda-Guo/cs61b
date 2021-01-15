@@ -96,19 +96,19 @@ public class Percolation {
     public boolean percolates() {
         return map.connected(N * N, N * N + 1);
     }
-    public static void main(String[] args) {
-        Percolation per = new Percolation(5);
-        per.open(1, 2);
-        per.open(1, 3);
-        per.open(2, 3);
-        per.open(3, 3);
-        per.open(4, 3);
-        per.open(0, 2);
-        per.open(4,1);
-        System.out.println(per.numberOfOpenSites());
-        System.out.println(per.isFull(4,1));
-        System.out.println(per.percolates());
-
-    }
+//    public static void main(String[] args) {
+//        Percolation per = new Percolation(5);
+//        per.open(1, 2);
+//        per.open(1, 3);
+//        per.open(2, 3);
+//        per.open(3, 3);
+//        per.open(4, 3);
+//        per.open(0, 2);
+//        per.open(4, 1);
+//        System.out.println(per.numberOfOpenSites());
+//        System.out.println(per.isFull(4, 1));
+//        System.out.println(per.percolates());
+//
+//    }
 
 }
