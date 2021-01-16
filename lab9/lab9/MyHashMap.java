@@ -26,6 +26,11 @@ public class MyHashMap<K, V> implements Map61B<K, V> {
         this.clear();
     }
 
+    public MyHashMap(int initialSize) {
+        buckets = new ArrayMap[initialSize];
+        this.clear();
+    }
+
     /* Removes all of the mappings from this map. */
     @Override
     public void clear() {
@@ -53,19 +58,47 @@ public class MyHashMap<K, V> implements Map61B<K, V> {
      */
     @Override
     public V get(K key) {
-        throw new UnsupportedOperationException();
+        if (key == null) {
+            throw new IllegalArgumentException();
+        }
+        int hashCode = hash(key);
+        return buckets[hashCode].get(key);
     }
 
     /* Associates the specified value with the specified key in this map. */
     @Override
     public void put(K key, V value) {
-        throw new UnsupportedOperationException();
+        if (key == null) {
+            throw new IllegalArgumentException();
+        }
+        if (loadFactor() >= MAX_LF) {
+            resize(2 * buckets.length);
+        }
+        int hashCode = hash(key);
+        if (!buckets[hashCode].containsKey(key)) {
+            size++;
+        }
+        buckets[hashCode].put(key, value);
     }
 
     /* Returns the number of key-value mappings in this map. */
     @Override
     public int size() {
-        throw new UnsupportedOperationException();
+        return size;
+    }
+
+    private void resize(int newSize) {
+        ArrayMap<K, V>[] temp = new ArrayMap[newSize];
+        for (int i = 0; i < temp.length; i += 1) {
+            temp[i] = new ArrayMap<>();
+        }
+
+        for (ArrayMap<K, V> bucket : buckets) {
+            for (K key : bucket.keySet()) {
+                temp[hash(key)].put(key, bucket.get(key));
+            }
+        }
+        this.buckets = temp;
     }
 
     //////////////// EVERYTHING BELOW THIS LINE IS OPTIONAL ////////////////

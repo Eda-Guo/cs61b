@@ -43,8 +43,17 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
     /** Returns the value mapped to by KEY in the subtree rooted in P.
      *  or null if this map contains no mapping for the key.
      */
-    private V getHelper(K key, Node p) {
-        throw new UnsupportedOperationException();
+    private V getHelper(K key, Node node) {
+        if (node == null) {
+            return null;
+        }
+        int cmp = key.compareTo(node.key);
+        if (cmp < 0) {
+            return getHelper(key, node.left);
+        } else if (cmp > 0) {
+            return getHelper(key, node.right);
+        }
+        return node.value;
     }
 
     /** Returns the value to which the specified key is mapped, or null if this
@@ -52,14 +61,26 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
      */
     @Override
     public V get(K key) {
-        throw new UnsupportedOperationException();
+        return getHelper(key, root);
     }
 
     /** Returns a BSTMap rooted in p with (KEY, VALUE) added as a key-value mapping.
       * Or if p is null, it returns a one node BSTMap containing (KEY, VALUE).
      */
-    private Node putHelper(K key, V value, Node p) {
-        throw new UnsupportedOperationException();
+    private Node putHelper(K key, V value, Node node) {
+        if (node == null) {
+            size++;
+            return new Node(key, value);
+        }
+        int cmp = key.compareTo(node.key);
+        if (cmp < 0) {
+            node.left = putHelper(key, value, node.left);
+        } else if (cmp > 0) {
+            node.right = putHelper(key, value, node.right);
+        } else {
+            node.value = value;
+        }
+        return node;
     }
 
     /** Inserts the key KEY
@@ -67,13 +88,13 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
      */
     @Override
     public void put(K key, V value) {
-        throw new UnsupportedOperationException();
+        root = putHelper(key, value, root);
     }
 
     /* Returns the number of key-value mappings in this map. */
     @Override
     public int size() {
-        throw new UnsupportedOperationException();
+        return size;
     }
 
     //////////////// EVERYTHING BELOW THIS LINE IS OPTIONAL ////////////////
