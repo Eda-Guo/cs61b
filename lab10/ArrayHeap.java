@@ -199,8 +199,9 @@ public class ArrayHeap<T> implements ExtrinsicPQ<T> {
         while (!contents[index].myItem.equals(item)) {
             index++;
         }
+        double prePriority = contents[index].myPriority;
         contents[index].myPriority = priority;
-        if (min(index, parentIndex(index)) == index) {
+        if (prePriority > priority) {
             swim(index);
         }
         else {
