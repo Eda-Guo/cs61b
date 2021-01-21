@@ -200,6 +200,12 @@ public class ArrayHeap<T> implements ExtrinsicPQ<T> {
             index++;
         }
         contents[index].myPriority = priority;
+        if (min(index, parentIndex(index)) == index) {
+            swim(index);
+        }
+        else {
+            sink(index);
+        }
     }
 
     /**
@@ -301,16 +307,20 @@ public class ArrayHeap<T> implements ExtrinsicPQ<T> {
         for (int i = 1; i <= 7; i += 1) {
             pq.contents[i] = new ArrayHeap<String>.Node("x" + i, i);
         }
-        // Change item x6's priority to a low value.
 
-        pq.contents[6].myPriority = 0;
-//        pq.changePriority("x" + 6, 0);  // test changePriority()
+
+
         System.out.println("PQ before swimming:");
         System.out.println(pq);
 
-        // Swim x6 upwards. It should reach the root.
 
+        // Change item x6's priority to a low value.
+        pq.contents[6].myPriority = 0;
+        // Swim x6 upwards. It should reach the root.
         pq.swim(6);
+        //        pq.changePriority("x" + 6, 0);  // test changePriority()
+
+
         System.out.println("PQ after swimming:");
         System.out.println(pq);
         assertEquals("x6", pq.contents[1].myItem);
