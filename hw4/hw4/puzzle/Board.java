@@ -3,6 +3,9 @@ package hw4.puzzle;
 
 import edu.princeton.cs.algs4.Queue;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Board implements WorldState {
     private static final int BLANK = 0;
     private int[][] cowmoo;
@@ -20,7 +23,7 @@ public class Board implements WorldState {
                 goalNum++;
             }
         }
-        goal[N-1][N-1] = 0;
+        goal[N - 1][N - 1] = 0;
 
     }
     public int tileAt(int i, int j) {
@@ -94,7 +97,7 @@ public class Board implements WorldState {
         return manhattan();
     }
     public boolean equals(Object y) {
-        if ( y.getClass() != this.getClass()) {
+        if (y.getClass() != this.getClass()) {
             return false;
         }
         Board otherBoard = (Board) y;
@@ -108,15 +111,26 @@ public class Board implements WorldState {
         return true;
     }
 
-    /** Returns the string representation of the board. 
+    @Override
+    public int hashCode() {
+        int sum = 0;
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                sum = (sum + cowmoo[i][j]) * 31;
+            }
+        }
+        return sum;
+    }
+
+    /** Returns the string representation of the board.
       * Uncomment this method. */
     public String toString() {
         StringBuilder s = new StringBuilder();
-        int N = size();
-        s.append(N + "\n");
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                s.append(String.format("%2d ", tileAt(i,j)));
+        int n = size();
+        s.append(n + "\n");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                s.append(String.format("%2d ", tileAt(i, j)));
             }
             s.append("\n");
         }

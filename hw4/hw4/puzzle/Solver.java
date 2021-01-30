@@ -5,17 +5,17 @@ import edu.princeton.cs.algs4.MinPQ;
 import java.util.*;
 
 public class Solver {
-    MinPQ<Node> pq;
-    int moves;
+    private MinPQ<Node> pq;
+    private int moves;
     private List<Node> solution;
-    private static class Node implements Comparable<Node>{
+    private static class Node implements Comparable<Node> {
         WorldState worldState;
         // the number of moves made to reach this world state from the initial state.
         int moves;
         Node pre;
         int estDistance;
 
-        public Node(WorldState worldState, Node pre, int moves) {
+        Node(WorldState worldState, Node pre, int moves) {
             this.estDistance = worldState.estimatedDistanceToGoal();
             this.worldState = worldState;
             this.moves = moves;
@@ -24,7 +24,7 @@ public class Solver {
 
         @Override
         public int compareTo(Node o) {
-            if ((o.getClass() == this.getClass())){
+            if ((o.getClass() == this.getClass())) {
                 Node n = (Node) o;
                 return (this.moves + this.estDistance) - (n.moves + n.estDistance);
 
@@ -59,7 +59,7 @@ public class Solver {
             for (WorldState neighbor : curr.worldState.neighbors()) {
                 // the node will be added can not equal to it's parent
                 if (curr.pre == null || !neighbor.equals(curr.pre.worldState)) {
-                    Node n = new Node( neighbor, curr, curr.moves + 1);
+                    Node n = new Node(neighbor, curr, curr.moves + 1);
                     pq.insert(n);
                 }
             }
