@@ -3,8 +3,6 @@ package hw4.puzzle;
 
 import edu.princeton.cs.algs4.Queue;
 
-import java.util.Arrays;
-import java.util.Objects;
 
 public class Board implements WorldState {
     private static final int BLANK = 0;
@@ -96,11 +94,14 @@ public class Board implements WorldState {
     public int estimatedDistanceToGoal() {
         return manhattan();
     }
-    public boolean equals(Object y) {
-        if (y.getClass() != this.getClass()) {
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || o.getClass() != this.getClass()) {
             return false;
         }
-        Board otherBoard = (Board) y;
+        Board otherBoard = (Board) o;
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 if (this.cowmoo[i][j] != otherBoard.cowmoo[i][j]) {

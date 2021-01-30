@@ -2,7 +2,9 @@ package hw4.puzzle;
 
 import edu.princeton.cs.algs4.MinPQ;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Solver {
     private MinPQ<Node> pq;
@@ -66,6 +68,7 @@ public class Solver {
             curr = pq.delMin();
             moves = curr.moves;
         }
+        solution.add(curr);
     }
 
 
@@ -78,6 +81,7 @@ public class Solver {
         for (Node node : solution) {
             res.add(node.worldState);
         }
+        System.out.println("solution size = " + solution.size());
         return res;
     }
 }
