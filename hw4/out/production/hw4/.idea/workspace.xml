@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a63c5ed4-d716-49eb-8d98-e263e1be2127" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hw4/puzzle/Solver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw4/puzzle/WordPuzzleSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw4/puzzle/WordPuzzleSolver.java" afterDir="false" />
-    </list>
+    <list default="true" id="a63c5ed4-d716-49eb-8d98-e263e1be2127" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,9 +35,19 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.WordPuzzleSolver">
-    <configuration name="WordPuzzleSolver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hw4.puzzle.WordPuzzleSolver" />
+  <component name="RunManager" selected="JUnit.TestSolver.test3x3BoardPuzzles">
+    <configuration name="EightPuzzleSolver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hw4.puzzle.EightPuzzleSolver" />
+      <module name="hw4" />
+      <option name="PROGRAM_PARAMETERS" value="input/puzzle07.txt" />
+      <selectedOptions>
+        <option name="environmentVariables" visible="false" />
+      </selectedOptions>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestBoard.testHamming" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw4" />
       <extension name="coverage">
         <pattern>
@@ -48,6 +55,10 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="hw4.puzzle" />
+      <option name="MAIN_CLASS_NAME" value="hw4.puzzle.TestBoard" />
+      <option name="METHOD_NAME" value="testHamming" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -62,9 +73,68 @@
         <option name="MakeNoErrorCheck" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestSolver" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hw4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hw4.puzzle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hw4.puzzle" />
+      <option name="MAIN_CLASS_NAME" value="hw4.puzzle.TestSolver" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSolver.test2x2BoardPuzzles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hw4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hw4.puzzle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hw4.puzzle" />
+      <option name="MAIN_CLASS_NAME" value="hw4.puzzle.TestSolver" />
+      <option name="METHOD_NAME" value="test2x2BoardPuzzles" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSolver.test3x3BoardPuzzles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hw4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hw4.puzzle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hw4.puzzle" />
+      <option name="MAIN_CLASS_NAME" value="hw4.puzzle.TestSolver" />
+      <option name="METHOD_NAME" value="test3x3BoardPuzzles" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.EightPuzzleSolver" />
+      <item itemvalue="JUnit.TestBoard.verifyImmutability" />
+      <item itemvalue="JUnit.TestBoard.testHamming" />
+      <item itemvalue="JUnit.TestSolver.test2x2BoardPuzzles" />
+      <item itemvalue="JUnit.TestSolver" />
+      <item itemvalue="JUnit.TestSolver.test3x3BoardPuzzles" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WordPuzzleSolver" />
+        <item itemvalue="JUnit.TestSolver.test3x3BoardPuzzles" />
+        <item itemvalue="Application.EightPuzzleSolver" />
+        <item itemvalue="JUnit.TestSolver" />
+        <item itemvalue="JUnit.TestSolver.test2x2BoardPuzzles" />
+        <item itemvalue="JUnit.TestBoard.testHamming" />
       </list>
     </recent_temporary>
   </component>

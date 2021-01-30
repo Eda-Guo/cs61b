@@ -6,15 +6,17 @@ import java.util.*;
 
 public class Solver {
     MinPQ<Node> pq;
-    private List<Node> solution;
     int moves;
-    HashSet<Node> visited;
+    private List<Node> solution;
     private static class Node implements Comparable<Node>{
         WorldState worldState;
         // the number of moves made to reach this world state from the initial state.
         int moves;
         Node pre;
+        int estDistance;
+
         public Node(WorldState worldState, Node pre, int moves) {
+            this.estDistance = worldState.estimatedDistanceToGoal();
             this.worldState = worldState;
             this.moves = moves;
             this.pre = pre;
@@ -22,43 +24,50 @@ public class Solver {
 
         @Override
         public int compareTo(Node o) {
-            int distance1 = this.worldState.estimatedDistanceToGoal() + this.moves;
-            int distance2 = o.worldState.estimatedDistanceToGoal() +o.moves;
-            return distance1 - distance2;
-        }
-    }
+            if ((o.getClass() == this.getClass())){
+                Node n = (Node) o;
+                return (this.moves + this.estDistance) - (n.moves + n.estDistance);
 
-
-    public Solver(WorldState initial) {
-        pq = new MinPQ<>();
-        solution = new ArrayList<>();
-        moves = 0;
-        visited = new HashSet<>();
-        Node start = new Node(initial, null, 0);
-        pq.insert(start);
-        visited.add(start);
-        searchHelper();
-    }
-
-    private void searchHelper() {
-        Node delete = pq.delMin();
-        moves = delete.moves;
-        solution.add(delete);
-        if (!delete.worldState.isGoal()) {
-            insertNeighbors(delete);
-            searchHelper();
-        }
-    }
-
-    private void insertNeighbors(Node node) {
-        for (WorldState w : node.worldState.neighbors()) {
-            Node toAdd = new Node(w, node, moves + 1);
-            if (!visited.contains(toAdd)) {
-                visited.add(toAdd);
-                pq.insert(toAdd);
             }
+            return -1;
         }
     }
+    public Solver(WorldState initial) {
+        solution = new ArrayList<>();
+        pq = new MinPQ<>();
+        Node first = new Node(initial, null, 0);
+        pq.insert(first);
+//        while (!pq.isEmpty()) {
+//            Node curr = pq.delMin();
+//            solution.add(curr);
+//            moves = curr.moves;
+//            if (curr.worldState.isGoal()) {
+//                return;
+//            }
+//            for (WorldState neighbor : curr.worldState.neighbors()) {
+//                // the node will be added can not equal to it's parent
+//                if (curr.pre == null || !neighbor.equals(curr.pre.worldState)) {
+//                    Node n = new Node( neighbor, curr, curr.moves + 1);
+//                    pq.insert(n);
+//                }
+//            }
+//        }
+        Node curr = pq.delMin();
+        moves = curr.moves;
+        while (!curr.worldState.isGoal()) {
+            solution.add(curr);
+            for (WorldState neighbor : curr.worldState.neighbors()) {
+                // the node will be added can not equal to it's parent
+                if (curr.pre == null || !neighbor.equals(curr.pre.worldState)) {
+                    Node n = new Node( neighbor, curr, curr.moves + 1);
+                    pq.insert(n);
+                }
+            }
+            curr = pq.delMin();
+            moves = curr.moves;
+        }
+    }
+
 
 
     public int moves() {
