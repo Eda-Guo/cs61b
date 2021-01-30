@@ -81,7 +81,7 @@ public class Solver {
         for (Node node : solution) {
             res.add(node.worldState);
         }
-        System.out.println("solution size = " + solution.size());
+//        System.out.println("solution size = " + solution.size());
         return res;
     }
 }

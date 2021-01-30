@@ -102,6 +102,10 @@ public class Board implements WorldState {
             return false;
         }
         Board otherBoard = (Board) o;
+        if (this.N != otherBoard.N){
+            return false;
+        }
+
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 if (this.cowmoo[i][j] != otherBoard.cowmoo[i][j]) {
